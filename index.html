@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>程序员01TI测试</title>
+    <!-- 使用 html2canvas.min.js -->
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <div class="blob blob-p1" aria-hidden="true"></div>
+    <div class="blob blob-p2" aria-hidden="true"></div>
+    <div class="blob blob-b1" aria-hidden="true"></div>
+    <div class="blob blob-b2" aria-hidden="true"></div>
+
+    <div id="container">
+        <section id="startSection" class="glass" aria-label="测试介绍">
+            <h1>程序员01TI测试</h1>
+            <p class="start-sub">
+                你是追求“代码美学”的图灵派，<br>
+                还是“上线第一”的冯·诺依曼派？
+            </p>
+            <p class="start-sub start-sub-warning">
+                ⚠本测试仅供娱乐，无任何科学依据，大家测个开心就好！<br>
+                <a href="https://space.bilibili.com/5262688" target="_blank" rel="noopener noreferrer">
+                    B站@喵喵豆腐酱
+                </a>
+            </p>
+            <button class="btn-primary" onclick="startQuiz()">开始测试</button>
+        </section>
+
+        <section id="quizSection" class="glass hidden" aria-label="答题区">
+            <div class="progress-info">
+                <span class="progress-label">答题进度</span>
+                <span class="progress-count" id="progressCount">1 / 10</span>
+            </div>
+            <div class="progress-track">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            <div id="questionCard"></div>
+        </section>
+
+        <div id="resultSection" aria-label="测试结果">
+            <h2 class="result-heading">测试结果</h2>
+            <div class="result-heading-line"></div>
+            <div class="proportions" id="proportions"></div>
+            <div class="chart-wrap"><canvas id="resultChart"></canvas></div>
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-swatch sw-t"></div><span>图灵派（美学）</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-swatch sw-v"></div><span>冯·诺依曼派（实用）</span>
+                </div>
+            </div>
+            <div class="type-name" id="typeName"></div>
+            <div class="type-desc" id="typeDesc"></div>
+        </div>
+
+        <button id="saveBtn" onclick="saveResult()" aria-label="保存结果">&#x1F4BE; 保存结果</button>
+    </div>
+
+    <div class="toast" id="toast"></div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
